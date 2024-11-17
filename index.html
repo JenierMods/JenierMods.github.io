@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saber verga</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-image: url('Imagen/los_compas.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            color: 0000;
+        }
+
+        .container {
+            text-align: center;
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.5);
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #4CAF50;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+        }
+
+        .button-group {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .button-group button {
+            padding: 12px 20px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: transform 0.3s, opacity 0.3s;
+            color: white;
+        }
+
+        .button-group button#university {
+            background-color: #4CAF50;
+        }
+
+        .button-group button#calendar {
+            background-color: #2196F3;
+        }
+
+        .button-group button#creator {
+            background-color: #FF5722;
+        }
+
+        .button-group button#members {
+            background-color: #9C27B0;
+        }
+
+        .button-group button:hover {
+            transform: translateY(-5px);
+            opacity: 0.9;
+        }
+
+        #modalOverlay, #modalOverlayBolita {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+
+        #modal {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            max-width: 300px;
+            width: 80%;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        #modal button {
+            margin-top: 10px;
+            padding: 10px 18px;
+            border: none;
+            border-radius: 8px;
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        #modal button:hover {
+            background-color: #45a049;
+        }
+
+        .circle {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 60px;
+            height: 60px;
+            background-image: url('Imagen/bolita.png');
+            background-size: cover;
+            background-position: center;
+            border-radius: 50%;
+            border: 3px solid white;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .circle:hover {
+            transform: scale(1.1) rotate(10deg);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.7);
+        }
+
+        .circle:active {
+            transform: scale(0.95);
+        }
+        
+        .modal-buttons {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+        }
+
+        .modal-buttons button {
+            padding: 10px 20px;
+            font-size: 1rem;
+            font-weight: bold;
+            border-radius: 8px;
+            cursor: pointer;
+            border: none;
+            transition: background-color 0.3s ease;
+        }
+
+        .modal-buttons .cancel {
+            background-color: #F44336;
+            color: white;
+        }
+
+        .modal-buttons .talk {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        .modal-buttons button:hover {
+            opacity: 0.8;
+        }
+        
+        #modalBolita {
+            background-color: #fff
+            color: #000;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            max-width: 400px;
+            width: 80%;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        #modalBolita p {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="circle" onclick="contactCreator()"></div>
+
+    <div class="container">
+        <h1>Bienvenidos 🙈</h1>
+        <div class="button-group">
+            <button id="university">Universidad</button>
+            <button id="calendar" onclick="location.href='calendario.html'">Calendario</button>
+            <button id="creator">Creador</button>
+            <button id="members">Integrantes</button>
+        </div>
+    </div>
+
+    <div id="modalOverlay">
+        <div id="modal">
+            <p id="modalMessage"></p>
+            <button onclick="closeModal()">OK</button>
+        </div>
+    </div>
+
+    <div id="modalOverlayBolita">
+        <div id="modalBolita">
+            <p>¿Quieres hablar con el creador?</p>
+            <div class="modal-buttons">
+                <button class="cancel" onclick="closeModalBolita()">Cancelar</button>
+                <button class="talk" onclick="confirmContact()">Hablar</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showModal(message) {
+            closeModalBolita();
+            document.getElementById('modalMessage').textContent = message;
+            document.getElementById('modalOverlay').style.display = 'flex';
+        }
+
+        function closeModal() {
+            document.getElementById('modalOverlay').style.display = 'none';
+        }
+
+        function closeModalBolita() {
+            document.getElementById('modalOverlayBolita').style.display = 'none';
+        }
+
+        function confirmContact() {
+            window.location.href = "mailto:jeniermods@gmail.com";
+        }
+
+        document.getElementById('university').addEventListener('click', function() {
+            showModal('Universidad Nacional Agraria');
+        });
+
+        document.getElementById('creator').addEventListener('click', function() {
+            showModal('Creado por JenierMods OFC');
+        });
+
+        document.getElementById('members').addEventListener('click', function() {
+            showModal('\nSolo yo alvrg 👁️👅👁️\n\n\n');
+        });
+
+        function contactCreator() {
+            closeModal();
+            document.getElementById('modalOverlayBolita').style.display = 'flex';
+        }
+    </script>
+
+</body>
+</html>

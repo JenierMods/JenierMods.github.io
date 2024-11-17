@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calendario Veterinario</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-calendar-alt"></i> Calendario de Medicamentos Veterinarios</h1>
+            <p class="text-center">Sistema de Gestión para Bovinos y Ovinos</p>
+        </header>
+
+        <div class="dashboard">
+            <div class="stats">
+                <div class="stat-card">
+                    <i class="fas fa-syringe"></i>
+                    <span id="totalVacunas">0</span>
+                    <p>Vacunas este mes</p>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-pills"></i>
+                    <span id="totalDesparasitaciones">0</span>
+                    <p>Desparasitaciones</p>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-prescription-bottle"></i>
+                    <span id="totalVitaminas">0</span>
+                    <p>Vitaminas</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="controls">
+            <button class="btn btn-primary" id="prevMonth">
+                <i class="fas fa-chevron-left"></i> Anterior
+            </button>
+            <div class="month-selector">
+                <h2 id="currentMonth">Mes Año</h2>
+                <select id="monthSelect" class="month-dropdown"></select>
+                <select id="yearSelect" class="year-dropdown"></select>
+            </div>
+            <button class="btn btn-primary" id="nextMonth">
+                Siguiente <i class="fas fa-chevron-right"></i>
+            </button>
+        </div>
+
+        <div class="legend">
+            <div class="legend-item">
+                <div class="legend-color" style="background: var(--primary)"></div>
+                <span><i class="fas fa-syringe"></i> Vacunación</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color" style="background: var(--secondary)"></div>
+                <span><i class="fas fa-pills"></i> Desparasitación</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color" style="background: var(--accent)"></div>
+                <span><i class="fas fa-prescription-bottle"></i> Vitaminas</span>
+            </div>
+        </div>
+
+        <div class="calendar">
+            <div class="calendar-header">
+                <div>Domingo</div>
+                <div>Lunes</div>
+                <div>Martes</div>
+                <div>Miércoles</div>
+                <div>Jueves</div>
+                <div>Viernes</div>
+                <div>Sábado</div>
+            </div>
+            <div class="calendar-days" id="calendarDays"></div>
+        </div>
+
+        <div class="event-list" id="eventList">
+            <div class="event-list-header">
+                <h3><i class="fas fa-list"></i> Próximos Tratamientos</h3>
+                <button class="btn btn-secondary" id="exportEvents">
+                    <i class="fas fa-download"></i> Exportar
+                </button>
+            </div>
+            <div class="event-list-content"></div>
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="modalOverlay"></div>
+    <div class="event-modal" id="eventModal">
+        <div class="modal-header">
+            <h3><i class="fas fa-plus-circle"></i> Agregar Tratamiento</h3>
+            <button class="close-btn" onclick="closeModal()">×</button>
+        </div>
+        <form id="eventForm">
+            <div class="form-group">
+                <label><i class="fas fa-calendar"></i> Fecha:</label>
+                <span id="selectedDate"></span>
+            </div>
+            <div class="form-group">
+                <label><i class="fas fa-tasks"></i> Tipo de Tratamiento:</label>
+                <select id="eventType" required>
+                    <option value="">Seleccione un tipo...</option>
+                    <option value="vacunacion">Vacunación</option>
+                    <option value="desparasitacion">Desparasitación</option>
+                    <option value="vitaminas">Vitaminas</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label><i class="fas fa-cow"></i> Tipo de Animal:</label>
+                <select id="animalType" required>
+                    <option value="">Seleccione un animal...</option>
+                    <option value="bovino">Bovino</option>
+                    <option value="ovino">Ovino</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label><i class="fas fa-hashtag"></i> Número de Identificación:</label>
+                <input type="text" id="animalId" placeholder="ID del animal" required>
+            </div>
+            <div class="form-group">
+                <label><i class="fas fa-info-circle"></i> Descripción:</label>
+                <textarea id="eventDescription" placeholder="Descripción detallada del tratamiento..." rows="3" required></textarea>
+            </div>
+            <div class="form-group">
+                <label><i class="fas fa-clock"></i> Recordatorio:</label>
+                <select id="reminder">
+                    <option value="none">Sin recordatorio</option>
+                    <option value="1day">1 día antes</option>
+                    <option value="3days">3 días antes</option>
+                    <option value="1week">1 semana antes</option>
+                </select>
+            </div>
+            <div class="form-buttons">
+                <button type="button" class="btn btn-secondary" onclick="closeModal()">
+                    <i class="fas fa-times"></i> Cancelar
+                </button>
+                <button type="submit" class="btn btn-primary">
+                    <i class="fas fa-save"></i> Guardar
+                </button>
+            </div>
+        </form>
+    </div>
+
+    <div class="watermark">
+        <p>Desarrollado por JenierMods OFC <i class="fas fa-code"></i></p>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>
