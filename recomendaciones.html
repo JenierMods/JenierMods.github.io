@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recomendaciones Veterinarias</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: blue;
+            color: #2c3e50;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        .header {
+            background-color: #3498db;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            border-radius: 5px;
+        }
+        .section {
+            margin-bottom: 30px;
+            background-color: #f9f9f9;
+            border-radius: 5px;
+            padding: 20px;
+            transition: all 0.3s ease;
+        }
+        .section:hover {
+            transform: scale(1.02);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        .section h2 {
+            color: #2980b9;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+        }
+        .back-button {
+            display: block;
+            width: 200px;
+            margin: 20px auto;
+            padding: 10px;
+            background-color: #2ecc71;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+            padding: 15px 30px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: transform 0.3s, background-color 0.3s;
+        }
+        .back-button:hover {
+            background-color: #27ae60;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🐄 Recomendaciones Veterinarias 🐑</h1>
+        </div>
+
+        <div class="section">
+            <h2>🩺 Medicamentos y Tratamientos</h2>
+            <p>Es crucial seguir estas recomendaciones para el manejo adecuado de medicamentos veterinarios:</p>
+            <ul>
+                <li>Siempre consulta con un veterinario antes de administrar cualquier medicamento</li>
+                <li>Mantén un registro detallado de vacunas y tratamientos</li>
+                <li>Verifica la fecha de caducidad de los medicamentos</li>
+                <li>Almacena los medicamentos en un lugar fresco y seco</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>🥛 Proceso de Ordeño</h2>
+            <p>Sigue estas medidas para un ordeño higiénico y eficiente:</p>
+            <ul>
+                <li>Lava y desinfecta los pezones antes del ordeño</li>
+                <li>Usa equipo de ordeño limpio y esterilizado</li>
+                <li>Realiza ordeños a intervalos regulares</li>
+                <li>Mantén un ambiente limpio y tranquilo</li>
+                <li>Revisa la salud de la ubre después de cada ordeño</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>🌡️ Control de Salud Animal</h2>
+            <p>Recomendaciones para mantener un ganado saludable:</p>
+            <ul>
+                <li>Realiza chequeos veterinarios periódicos</li>
+                <li>Controla la temperatura corporal regularmente</li>
+                <li>Observa cambios en el comportamiento o apetito</li>
+                <li>Mantén un plan de desparasitación</li>
+                <li>Asegura una alimentación balanceada y nutritiva</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>🌱 Manejo de Pastizales</h2>
+            <p>Consejos para un pastoreo adecuado:</p>
+            <ul>
+                <li>Rota los potreros para evitar sobrepastoreo</li>
+                <li>Mantén cercas en buen estado</li>
+                <li>Asegura fuentes de agua limpia</li>
+                <li>Controla la presencia de plantas tóxicas</li>
+                <li>Proporciona sombra y refugio</li>
+            </ul>
+        </div>
+
+        <a href="index.html" class="back-button">Volver a Inicio</a>
+    </div>
+
+    <script>
+        // Opcional: Añadir interactividad
+        document.querySelectorAll('.section').forEach(section => {
+            section.addEventListener('mouseenter', function() {
+                this.style.transform = 'scale(1.02)';
+            });
+            section.addEventListener('mouseleave', function() {
+                this.style.transform = 'scale(1)';
+            });
+        });
+    </script>
+</body>
+</html>
