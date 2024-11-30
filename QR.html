@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Escanear Código QR</title>
+    <link rel="stylesheet" href="QR.css">
+    <script src="https://cdn.jsdelivr.net/npm/jsqr/dist/jsQR.min.js"></script>
+    <script src="QR.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Escanear Código QR</h1>
+        <button id="selectQRButton" onclick="triggerFileInput()">Seleccionar Código</button>
+        <input type="file" id="fileInput" accept="image/*" style="display: none;">
+    </div>
+    
+    <!-- Cuadro para mostrar el contenido del QR -->
+    <div id="qrContentBox">
+        <p id="qrContentText">Aquí aparecerá el contenido del código QR</p>
+    </div>
+</body>
+</html>

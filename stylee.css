@@ -68,6 +68,10 @@ h1 {
     background-color: #FF5722;
 }
 
+.button-group button#scanQR {
+    background-color: #9900FF;
+}
+
 .button-group button#members {
     background-color: #9C27B0;
 }
@@ -318,8 +322,4 @@ h1 {
     background-color: #006666; /* Color rosado */
 }
 
-.button-group button:hover {
-    transform: translateY(-5px);
-    opacity: 0.9;
-}
-
+.button-group butto
