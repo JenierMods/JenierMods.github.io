@@ -7,8 +7,13 @@
     <link rel="stylesheet" href="stylee.css">
 </head>
 <body>
+    <div class="menu-icon" onclick="toggleMenu()">
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+    </div>
     <div class="circle" onclick="contactCreator()"></div>
-    <div class="container">
+    <div class="container" id="menuContainer" style="display: none;">
         <h1>Bienvenido 🥺🫶</h1>
         <div class="button-group">
             <button id="university" aria-label="Universidad">Universidad</button>
@@ -17,7 +22,6 @@
             <button id="video" onclick="location.href='video.html'">Video interesante</button>
             <button id="calendar" onclick="location.href='calendario.html'" aria-label="Calendario">Calendario</button>
             <button id="creator" aria-label="Creador">Creador</button>
-            <!-- Botón para escanear código QR con redirección -->
             <button id="scanQR" onclick="location.href='QR.html'" aria-label="Escanear código QR">Escanear código QR</button>
         </div>
     </div>

@@ -1,11 +1,9 @@
-/* Estilo general para el contenedor */
 .container {
     text-align: center;
     margin-top: 50px;
     font-family: Arial, sans-serif;
 }
 
-/* Estilo para el botón */
 #selectQRButton {
     background-color: #4CAF50;
     color: white;
@@ -28,7 +26,6 @@
     transform: scale(0.95);
 }
 
-/* Cuadro centrado para el contenido del QR */
 #qrContentBox {
     position: fixed;
     top: 50%;

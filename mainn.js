@@ -32,3 +32,12 @@ function contactCreator() {
     closeModal();
     document.getElementById('modalOverlayBolita').style.display = 'flex';
 }
+
+function toggleMenu() {
+    const menuContainer = document.getElementById('menuContainer');
+    if (menuContainer.style.display === "none") {
+        menuContainer.style.display = "block";
+    } else {
+        menuContainer.style.display = "none";
+    }
+}
